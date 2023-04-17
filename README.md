@@ -93,10 +93,12 @@ each app has two scripts to run bench mark, to run all:
 $ cd /src/tailbench
 
 
+# sleep for bench to exit
 $ for app in img-dnn masstree shore specjbb moses silo sphinx xapian;do \
   echo ${app}; \
   cd ${app};\
   ./run_networked.sh; \
+  sleep 10; \
   cd -; \
   done;
 ```
