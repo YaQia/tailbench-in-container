@@ -106,7 +106,7 @@ $ for app in img-dnn masstree shore specjbb moses silo sphinx xapian;do \
 check the result by:
 
 ```shell
-$ for app in img-dnn masstree shore specjbb moses silo sphinx xapian;do \
+$ for app in img-dnn masstree specjbb moses silo sphinx xapian;do \
   echo ${app}; \
   python utilities/parselats.py ${app}/lats.bin 95; \
   done;
