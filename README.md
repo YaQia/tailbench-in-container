@@ -1,6 +1,6 @@
 # tailbench-in-container
 
-build and run tailbench in container
+build and run tailbench in container, inspired by [briankoco/tailbench-docker](https://github.com/briankoco/tailbench-docker)
 
 ## Component
 
@@ -39,7 +39,12 @@ if you have `docker-compose` installed, you can to build and run env container a
 
 ```shell
 # if build already, just remove `build` flag
-$ docker-compose up --build
+# `-d` means running backend
+$ docker-compose up -d --build
+
+
+# enter into container
+$ docker exec -it tailbenchd-tailbenchenv-1 /bin/bash
 ```
 
 but if you want to start step by step, you do as follow
@@ -70,4 +75,37 @@ after all thinges done, you can run a container and start compling
 ```shell
 # flag `rm` will destroy container while existing, remove if you want to keep container remaining
 $ docker run -it --rm -v ${PWD}/tailbench-v0.9:/src/tailbench -v ${PWD}/tailbench.inputs:/src/dataset tailbenchenv:centos7 /bin/bash
+```
+
+## Build and Run
+
+tailbench source code will mount at `/src/tailbench`, you can build by [instructions](tailbench-v0.9/BUILD-INSTRUCTIONS)
+
+```shell
+$ cd /src/tailbench
+
+$ ./build.sh
+```
+
+each app has two scripts to run bench mark, to run all:
+
+```shell
+$ cd /src/tailbench
+
+
+$ for app in img-dnn masstree shore specjbb moses silo sphinx xapian;do \
+  echo ${app}; \
+  cd ${app};\
+  ./run_networked.sh; \
+  cd -; \
+  done;
+```
+
+check the result by:
+
+```shell
+$ for app in img-dnn masstree shore specjbb moses silo sphinx xapian;do \
+  echo ${app}; \
+  python utilities/parselats.py ${app}/lats.bin 95; \
+  done;
 ```
