@@ -42,7 +42,6 @@ if you have `docker-compose` installed, you can to build and run env container a
 # `-d` means running backend
 $ docker-compose up -d --build
 
-
 # enter into container
 $ docker exec -it tailbenchd-tailbenchenv-1 /bin/bash
 ```
@@ -79,7 +78,7 @@ $ docker run -it --rm -v ${PWD}/tailbench-v0.9:/src/tailbench -v ${PWD}/tailbenc
 
 ## Build and Run
 
-tailbench source code will mount at `/src/tailbench`, you can build by [instructions](tailbench-v0.9/BUILD-INSTRUCTIONS)
+tailbench source code will mount at `/src/tailbench`, you can build by [BUILD-INSTRUCTIONS](https://github.com/Faione/tailbench/blob/main/BUILD-INSTRUCTIONS)
 
 ```shell
 $ cd /src/tailbench
@@ -91,7 +90,6 @@ each app has two scripts to run bench mark, to run all:
 
 ```shell
 $ cd /src/tailbench
-
 
 # sleep for bench to exit
 $ for app in img-dnn masstree shore specjbb moses silo sphinx xapian;do \
