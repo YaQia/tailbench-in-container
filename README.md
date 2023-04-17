@@ -26,11 +26,11 @@ you can download tailbench and datasets from [here](http://tailbench.csail.mit.e
 $ git submodule update --init 
 ```
 
-and i have made some configs for building and running in container on branch nochrt, just run:
+I have made some configs for building and running in container on branch nochrt, if you want to use the raw config just run:
 
 ```shell
 $ cd tailbench-v0.9
-$ git checkout nochrt
+$ git checkout main
 ```
 
 ## Container Env
