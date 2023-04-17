@@ -1,0 +1,12 @@
+version: "3"
+services:
+  tailbenchenv:
+    build: .
+    image: tailbenchenv:centos7
+    volumes:
+      - ./tailbench-v0.9:/src/tailbench
+      - ./tailbench.inputs:/src/dataset
+    environment:
+      - LD_LIBRARY_PATH=/src/sphinx/sphinx-install/lib:/src/xapian/xapian-core-1.2.13/install/lib:$LD_LIBRARY_PATH
+    command: ["sleep","infinity"]
+    restart: always
