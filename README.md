@@ -4,8 +4,8 @@ build and run tailbench in container
 
 ## Component
 
-- TailBench v0.9[^1]: apps and tools's source code and dependencies
-- TailBench Datasets[^2]: realword workload dataset
+- TailBench v0.9: apps and tools's source code and dependencies
+- TailBench Datasets: realword workload dataset
 - Dockerfile: build a compiling env container on centos
 - docker-compose.yaml: run a building env container, build if image not found
 
@@ -71,6 +71,3 @@ after all thinges done, you can run a container and start compling
 # flag `rm` will destroy container while existing, remove if you want to keep container remaining
 $ docker run -it --rm -v ${PWD}/tailbench-v0.9:/src/tailbench -v ${PWD}/tailbench.inputs:/src/dataset tailbenchenv:centos7 /bin/bash
 ```
-
-[1]: [tailbench_v0.9](http://tailbench.csail.mit.edu/tailbench-v0.9.tgz)
-[2]: [tailbench_datasets](http://tailbench.csail.mit.edu/tailbench.inputs.tgz)
