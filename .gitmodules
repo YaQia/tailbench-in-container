@@ -1,0 +1,3 @@
+[submodule "tailbench-v0.9"]
+	path = tailbench-v0.9
+	url = https://github.com/Faione/tailbench.git
