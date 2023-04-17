@@ -7,6 +7,6 @@ services:
       - ./tailbench-v0.9:/src/tailbench
       - ./tailbench.inputs:/src/dataset
     environment:
-      - LD_LIBRARY_PATH=/src/sphinx/sphinx-install/lib:/src/xapian/xapian-core-1.2.13/install/lib:$LD_LIBRARY_PATH
+      - LD_LIBRARY_PATH=/src/tailbench/sphinx/sphinx-install/lib:/src/tailbench/xapian/xapian-core-1.2.13/install/lib
     command: ["sleep","infinity"]
     restart: always
