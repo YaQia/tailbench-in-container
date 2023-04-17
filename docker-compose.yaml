@@ -2,7 +2,7 @@ version: "3"
 services:
   tailbenchenv:
     build: .
-    image: tailbenchenv:centos7
+    image: faione/tailbenchenv:centos7
     volumes:
       - ./tailbench-v0.9:/src/tailbench
       - ./tailbench.inputs:/src/dataset

@@ -38,9 +38,9 @@ $ git checkout main
 if you have `docker-compose` installed, you can to build and run env container and mount tailbench onto it just by
 
 ```shell
-# if build already, just remove `build` flag
+# add `--build` to build image locally,
 # `-d` means running backend
-$ docker-compose up -d --build
+$ docker-compose up -d
 
 # enter into container
 $ docker exec -it tailbenchd-tailbenchenv-1 /bin/bash
@@ -52,7 +52,7 @@ but if you want to start step by step, you do as follow
 $ make image
 ```
 
-this will build a image (default tailbenchenv:centos7) base on centos7, and install nessessary packages as follow: 
+this will build a image base on centos7, and install nessessary packages as follow: 
 
 ```shell
 make automake file \
@@ -73,7 +73,7 @@ after all thinges done, you can run a container and start compling
 
 ```shell
 # flag `rm` will destroy container while existing, remove if you want to keep container remaining
-$ docker run -it --rm -v ${PWD}/tailbench-v0.9:/src/tailbench -v ${PWD}/tailbench.inputs:/src/dataset tailbenchenv:centos7 /bin/bash
+$ docker run -it --rm -v ${PWD}/tailbench-v0.9:/src/tailbench -v ${PWD}/tailbench.inputs:/src/dataset faione/tailbenchenv:centos7 /bin/bash
 ```
 
 ## Build and Run
